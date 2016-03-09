@@ -1,6 +1,6 @@
-###Bank System Fundamentals (BSF)
+#Bank System Fundamentals (BSF)
 
-#Dev3o
+###Dev3o
 1. Aleksandar Aćimović
 2. Berina Cocalić
 3. Emir Bećirović
@@ -13,12 +13,12 @@ Sistem omogucjuje korisnicima brzi i jednostavniji pregled informacija racuna, t
 
 ##Procesi
 
-#Kreiranje racuna //DORADITI!
+###Kreiranje racuna //DORADITI!
 
 Nakon sto kranji korisnik popuni formu sa svim potrebnim podatcima o svom racunu salje zahtjev koji je na cekanju.
 Taj zahtjev ceka odobrenje uposlenika unutar institucije. Uposlenik prima obavjest o novom zahtjevu i nakon pregledavanja ga odobrava.
 
-#Transakcija
+###Transakcija
 
 Transakcija se moze obaviti na vise nacina:
 
@@ -30,7 +30,7 @@ Transakcija se moze obaviti na vise nacina:
 	Krajnji korisnik uposleniku u filijali predaje gotovinu i podatke racuna na koji se sretstva uplacuju.
 	Nakon sto uposlenik unese u formu sve potrebne podatke i izvrsi zahtjev, u slucaju greske unutar 24 sata transakcija moze biti ponistena.
 	
-#Ponistavanje transakcija
+###Ponistavanje transakcija
 
 Ponistavanje transakcija se moze obaviti na vise nacina:
 
@@ -43,7 +43,7 @@ Ponistavanje transakcija se moze obaviti na vise nacina:
 
 U oba slucaja kreira se izvjestaj o ponistavanju transakcije sa svim detaljima.
 
-#Konverzija valuta
+###Konverzija valuta
 
 Konverzija valuta se vrsi pri dizanju sretstava sa racuna ili direktno u filijalama. Ukoliko se sretstva dizu sa racuna onda korsnik ce imati opciju dizanja u devizama.
 Nakon odabira opcije korisnik bira koju valutu zeli. Ukoliko se konverzija vrsi u filijali, onda konvertor predstavlja obicni kalkulator. U oba slucaja se spasava izvjestaj.
