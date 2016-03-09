@@ -1,4 +1,4 @@
-#Bank System Fundamentals (BSF)
+﻿#Bank System Fundamentals (BSF)
 
 ###Dev3o
 1. Aleksandar Aćimović
@@ -9,25 +9,25 @@
 
 Bank System Fundamentals (BSF) je sistem koji se, kao sto i ime kaze, bavi osnovnim bankarskim procesima. On automatizuje najucestalije bankarske radnje.
 Ovaj sistem je namjenjen administraciji i uposlenicima bankarskih, i/ili slicnih, institucija, kao i njihovim klijentima.
-Sistem omogucjuje korisnicima brzi i jednostavniji pregled informacija racuna, transakcije, konverzije valuta i sl.
+Sistem omogucava korisnicima brzi i jednostavniji pregled informacija racuna, transakcije, konverzije valuta i sl.
 
 ##Procesi
 
 ###Kreiranje racuna //DORADITI!
 
-Nakon sto kranji korisnik popuni formu sa svim potrebnim podatcima o svom racunu salje zahtjev koji je na cekanju.
-Taj zahtjev ceka odobrenje uposlenika unutar institucije. Uposlenik prima obavjest o novom zahtjevu i nakon pregledavanja ga odobrava.
+Nakon sto kranji korisnik popuni formu sa svim potrebnim podacima o svom racunu salje zahtjev koji je na cekanju.
+Taj zahtjev ceka odobrenje uposlenika unutar institucije. Uposlenik prima obavijest o novom zahtjevu i nakon pregledavanja ga odobrava.
 
 ###Transakcija
 
 Transakcija se moze obaviti na vise nacina:
 
 1. Sa racuna na racun:
-	Korisnik unosi broj racuna na koji uplacuje, prenosti, sredstva sa svog. Unosi kolicinu i sifru svog racuna. Nakon unesenih podataka on salje zahtjev,
+	Korisnik unosi broj racuna na koji uplacuje, prenosi, sredstva sa svog. Unosi kolicinu i sifru svog racuna. Nakon unesenih podataka on salje zahtjev,
 	zahtjev se procesuira tako sto korisnik dobije kod verifikacije na mobitel. Taj kod dalje unosi u formu koja potvrdjuje transakciju.
 	Ukoliko je doslo do greske korisnik ima pravo u narednih 24 sata da ponisti transakciju.
 2. Preko filijale, gotovinski:
-	Krajnji korisnik uposleniku u filijali predaje gotovinu i podatke racuna na koji se sretstva uplacuju.
+	Krajnji korisnik uposleniku u filijali predaje gotovinu i podatke racuna na koji se sredstva uplacuju.
 	Nakon sto uposlenik unese u formu sve potrebne podatke i izvrsi zahtjev, u slucaju greske unutar 24 sata transakcija moze biti ponistena.
 	
 ###Ponistavanje transakcija
@@ -38,14 +38,14 @@ Ponistavanje transakcija se moze obaviti na vise nacina:
 	Korisnik ima pregled svih obavljenih transakcija. Unutar 24 sata nakon transakcije pored nje stoji opcija za ponistavanjem.
 	Korisnik moze da ponisti transakciju birajuci tu opciju i popunjavajuci podatke za verifikaciju. Verifikacija se vrsi u dva koraka, korisnickom sifrom i unosenjem koda dobijenog preko SMS poruke.
 2. Preko filijale:
-	Korisnik uposleniku predaje zahtjev za ponistenje transakcije usmenim putem i predavanjem licnih ispava sa uplatnicom transakcije unutar 24 sata nakon nje.
+	Korisnik uposleniku predaje zahtjev za ponistenje transakcije usmenim putem i predavanjem licnih isprava sa uplatnicom transakcije unutar 24 sata nakon nje.
 	Uposlenik vrsi ponistavanje.
 
 U oba slucaja kreira se izvjestaj o ponistavanju transakcije sa svim detaljima.
 
 ###Konverzija valuta
 
-Konverzija valuta se vrsi pri dizanju sretstava sa racuna ili direktno u filijalama. Ukoliko se sretstva dizu sa racuna onda korsnik ce imati opciju dizanja u devizama.
+Konverzija valuta se vrsi pri dizanju sredstava sa racuna ili direktno u filijalama. Ukoliko se sredstva dizu sa racuna onda korisnik ce imati opciju dizanja u devizama.
 Nakon odabira opcije korisnik bira koju valutu zeli. Ukoliko se konverzija vrsi u filijali, onda konvertor predstavlja obicni kalkulator. U oba slucaja se spasava izvjestaj.
 
 ##Funkcionalnosti
