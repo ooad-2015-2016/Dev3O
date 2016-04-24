@@ -1,0 +1,33 @@
+Principi dobrog dizanjna (Solid principi) su:
+1.Princip pojedinacne odgovornosti,
+2.Otvoreno zatvoreni princip,
+3.Liskov princip zamjene,
+4.Princip inverzije ovisnosti,
+5.Princip izoliranja interfejsa.
+
+1. Princi pojedinacne odgovornosti:
+
+-Vidimo da je princip pojedinacne odgovornosti narusen, jer princip glasi da bi svaka klasa trebala
+imati samo jedan razlog za promjenu, a npr. klasa Person, ako bi promijenili bazu podataka, morali bi
+promijeniti i klasu, zatim npr. ako promijenimo format telefona ili email-a, opet bi morali mijenjati 
+klasu.
+
+2. Otvoreno zatvoreni princip:
+
+-Otvoreno zatvoreni princip je ispostovan, jer su svi entiteti otvoreni za nadogradnju, ali zatvoreni za
+modifikaciju.
+
+3. Liskov princip zamjene:
+
+-Liskov princip zamjene je, takoder, ispostovan, jer su svi tipovi zamjenjivi sa svojim osnovnim.
+
+4. Princip inverzije ovisnosti:
+
+- Vidimo da je princip inverzije ovisnosti narusen, jer postoje klase koje ovise od konkretnih klasa.
+Npr. Account klasa je u ovom dijagramu konkretna, a klase Member i Employee ovise od klase Account.
+Isto tako i klase OnlineTransaction i DirectTransaction ovise o konkretnoj klasi Transactiom.
+
+5. Princip izoliranja interfejsa:
+
+-Vidimo da je princip izoliranja interfejsa narusen, jer imamo "debelu" klasu Person, gdje smo neke metode
+mogli izdvojiti u interfejs cime bi ovaj princip bio ispostovan.
