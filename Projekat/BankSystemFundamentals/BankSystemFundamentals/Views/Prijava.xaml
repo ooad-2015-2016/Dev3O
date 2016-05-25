@@ -7,76 +7,69 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid Background="#FFE6E6E6">
         <Grid.RowDefinitions>
-            <RowDefinition Height="101*" />
-            <RowDefinition Height="539*" />
+            <RowDefinition Height="13*" />
+            <RowDefinition Height="51*" />
         </Grid.RowDefinitions>
         <TextBlock
             x:Name="textBoxPrijavaNaslov"
-            Margin="10,15,222,25"
-            HorizontalAlignment="Center"
+            Margin="110,15,110,25"
             FontSize="36"
-            FontWeight="Bold"
             Text="Prijava"
-            TextWrapping="Wrap" Width="128" />
+            TextWrapping="Wrap" FontFamily="Microsoft JhengHei Light" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" TextAlignment="Center"/>
         <TextBlock
             x:Name="textBlock1"
-            Margin="10,0,0,5"
-            HorizontalAlignment="Left"
+            Margin="116,0,112,40"
             VerticalAlignment="Bottom"
             Text="Prijavite se na servis"
-            TextWrapping="Wrap" Height="20" Width="132" />
+            TextWrapping="Wrap" Height="20" FontFamily="Microsoft JhengHei Light" d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition" TextAlignment="Center"/>
         <Border
             Height="2"
             Margin="0,0,0,3"
             VerticalAlignment="Bottom"
             BorderBrush="Black"
-            BorderThickness="1" />
+            BorderThickness="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
 
         <TextBox
             x:Name="textBoxKorisnickoImeUnos"
             Grid.Row="1"
-            Margin="28,0,24,376"
-            VerticalAlignment="Bottom"
+            Margin="28,148,24,0"
+            VerticalAlignment="Top"
             PlaceholderText=""
             Text=""
-            TextWrapping="Wrap" Height="32" />
+            TextWrapping="Wrap" Height="32" d:LayoutOverrides="LeftMargin, RightMargin" />
         <TextBlock
             x:Name="textBoxKorisnickoIme"
             Grid.Row="1"
-            Margin="28,0,0,413"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Bottom"
-            FontWeight="Bold"
+            Margin="29,113,144,0"
+            VerticalAlignment="Top"
             Text="Unesite korisničko ime:"
-            TextWrapping="Wrap" Height="20" Width="163" />
+            TextWrapping="Wrap" Height="66" FontFamily="Microsoft JhengHei Light" FontSize="18" />
 
         <TextBox
             x:Name="textBoxSifraUnos"
             Grid.Row="1"
-            Margin="28,0,24,256"
-            VerticalAlignment="Bottom"
+            Margin="28,0,24,217"
             PlaceholderText=""
             Text=""
-            TextWrapping="Wrap" Height="32" />
+            TextWrapping="Wrap" d:LayoutOverrides="LeftMargin, RightMargin" Height="32" VerticalAlignment="Bottom" />
         <TextBlock
             x:Name="textBoxSifra"
             Grid.Row="1"
-            Margin="28,0,0,293"
+            Margin="29,230,0,254"
             HorizontalAlignment="Left"
-            VerticalAlignment="Bottom"
-            FontWeight="Bold"
             Text="Unesite šifru:"
-            TextWrapping="Wrap" Height="20" Width="93" />
+            TextWrapping="Wrap" Width="145" FontFamily="Microsoft JhengHei Light" FontSize="18" d:LayoutOverrides="TopPosition, BottomPosition" />
 
         <Button
             x:Name="buttonRegistracija"
             Grid.Row="1"
-            Margin="75,0,75,100"
+            Margin="75,0,75,81"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Bottom"
-            Content="Prijavite se" Height="32" />
+            Content="Prijavite se" Height="45" d:LayoutOverrides="LeftMargin, RightMargin" FontSize="20" Background="White" />
+        <Image x:Name="image" Margin="10,10,0,40" Source="ms-appx:///Assets/Logo.png" HorizontalAlignment="Left" Width="95" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition"/>
 
 
     </Grid>
