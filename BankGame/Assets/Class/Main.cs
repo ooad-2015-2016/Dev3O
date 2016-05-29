@@ -41,6 +41,7 @@ public class Main : MonoBehaviour {
 		yield return new WaitForSeconds(1.0f);
 		gameOverText.SetActive (true);
 		yield return new WaitForSeconds(2.0f);
+        gameOverText.SetActive(false);
 		restartButton.SetActive (true);
 	}
 }

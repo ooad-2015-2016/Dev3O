@@ -1,1 +1,0 @@
-E:\Dev3O\Projekat\BankSystemFundamentals\BankSystemFundamentals\BankSystemFundamentals.csproj;x64

@@ -1,0 +1,76 @@
+﻿<Page
+    x:Class="BSF.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BSF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FFE6E6E6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*" />
+            <RowDefinition Height="51*" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            x:Name="textBoxPrijavaNaslov"
+            Margin="110,15,110,25"
+            FontSize="36"
+            Text="Prijava"
+            TextWrapping="Wrap" FontFamily="Microsoft JhengHei Light" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" TextAlignment="Center"/>
+        <TextBlock
+            x:Name="textBlock1"
+            Margin="116,0,112,40"
+            VerticalAlignment="Bottom"
+            Text="Prijavite se na servis"
+            TextWrapping="Wrap" Height="20" FontFamily="Microsoft JhengHei Light" d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition" TextAlignment="Center"/>
+        <Border
+            Height="2"
+            Margin="0,0,0,3"
+            VerticalAlignment="Bottom"
+            BorderBrush="Black"
+            BorderThickness="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+
+        <TextBox
+            x:Name="textBoxKorisnickoImeUnos"
+            Grid.Row="1"
+            Margin="28,148,24,0"
+            VerticalAlignment="Top"
+            PlaceholderText=""
+            Text=""
+            TextWrapping="Wrap" Height="32" d:LayoutOverrides="LeftMargin, RightMargin" />
+        <TextBlock
+            x:Name="textBoxKorisnickoIme"
+            Grid.Row="1"
+            Margin="29,113,144,0"
+            VerticalAlignment="Top"
+            Text="Unesite korisničko ime:"
+            TextWrapping="Wrap" Height="66" FontFamily="Microsoft JhengHei Light" FontSize="18" />
+
+        <TextBox
+            x:Name="textBoxSifraUnos"
+            Grid.Row="1"
+            Margin="28,0,24,217"
+            PlaceholderText=""
+            Text=""
+            TextWrapping="Wrap" d:LayoutOverrides="LeftMargin, RightMargin" Height="32" VerticalAlignment="Bottom" />
+        <TextBlock
+            x:Name="textBoxSifra"
+            Grid.Row="1"
+            Margin="29,230,0,254"
+            HorizontalAlignment="Left"
+            Text="Unesite šifru:"
+            TextWrapping="Wrap" Width="145" FontFamily="Microsoft JhengHei Light" FontSize="18" d:LayoutOverrides="TopPosition, BottomPosition" />
+
+        <Button
+            x:Name="buttonRegistracija"
+            Grid.Row="1"
+            Margin="75,0,75,81"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom"
+            Content="Prijavite se" Height="45" d:LayoutOverrides="LeftMargin, RightMargin" FontSize="20" Background="White" />
+        <Image x:Name="image" Margin="10,10,0,40" Source="ms-appx:///Assets/Logo.png" HorizontalAlignment="Left" Width="95" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition"/>
+
+
+    </Grid>
+</Page>

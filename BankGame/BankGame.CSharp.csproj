@@ -75,6 +75,7 @@
     <Compile Include="Assets\Class\Observer\Observer.cs" />
     <Compile Include="Assets\Class\Observer\Subject.cs" />
     <Compile Include="Assets\Class\Position\Position.cs" />
+    <Compile Include="Assets\Class\Restart.cs" />
     <Compile Include="Assets\Class\State\BigBag.cs" />
     <Compile Include="Assets\Class\State\Bomb.cs" />
     <Compile Include="Assets\Class\State\IState.cs" />
