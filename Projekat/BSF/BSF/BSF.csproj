@@ -95,7 +95,10 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="DAL\BankDbContext.cs" />
+    <Compile Include="Helpers\INavigation.cs" />
+    <Compile Include="Helpers\NavigationService.cs" />
+    <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="Model\DAL\BankDbContext.cs" />
     <Compile Include="Migrations\20160529172452_InitialMigration.cs" />
     <Compile Include="Migrations\20160529172452_InitialMigration.designer.cs">
       <DependentUpon>20160529172452_InitialMigration.cs</DependentUpon>
@@ -107,6 +110,11 @@
     <Compile Include="Model\Classes\Transaction.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\MainPageViewModel.cs" />
+    <Compile Include="ViewModel\RegistrationViewModel.cs" />
+    <Compile Include="View\Registration.xaml.cs">
+      <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
     <Content Include="Assets\Logo.png" />
     <Content Include="Properties\AssemblyInfo.cs">
@@ -175,9 +183,7 @@
       <Name>SQLite for Universal Windows Platform</Name>
     </SDKReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="ViewModel\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

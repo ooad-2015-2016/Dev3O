@@ -1,42 +1,43 @@
 ﻿<Page
-    x:Class="BSF.Registration"
+    x:Class="BSF.View.Registration"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:BSF"
+    xmlns:local="using:BSF.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="#FFE6E6E6">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="3*" />
-            <RowDefinition Height="17*" />
-        </Grid.RowDefinitions>
-        <TextBlock
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid Background="#FFE6E6E6">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="17*" />
+            </Grid.RowDefinitions>
+            <TextBlock
             x:Name="textBoxPrijavaNaslov"
             Margin="117,12,33,28"
             FontSize="36"
             Text="Registracija"
             TextWrapping="Wrap" FontFamily="Microsoft JhengHei Light" d:LayoutOverrides="TopMargin, BottomMargin, LeftPosition, RightPosition" TextAlignment="Center"/>
-        <TextBlock
+            <TextBlock
             x:Name="textBlock1"
             Margin="114,0,30,16"
             VerticalAlignment="Bottom"
             Text="Popunite Vaše podatke ispod"
             TextWrapping="Wrap" Height="20" FontFamily="Microsoft JhengHei Light" d:LayoutOverrides="VerticalAlignment, LeftPosition, RightPosition" TextAlignment="Center"/>
-        <Border
+            <Border
             Height="2"
             Margin="0,0,0,3"
             VerticalAlignment="Bottom"
             BorderBrush="Black"
             BorderThickness="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
-        <Border
+            <Border
             Height="2"
             Margin="0,0,0,3"
             VerticalAlignment="Bottom"
             BorderBrush="Black"
             BorderThickness="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
-        <TextBlock
+            <TextBlock
             x:Name="textBlock2"
             Grid.Row="1"
             Height="32"
@@ -46,7 +47,7 @@
             FontSize="15"
             Text="Ime i ime oca:"
             TextWrapping="Wrap" Width="98" d:LayoutOverrides="LeftMargin, RightMargin" FontFamily="Microsoft JhengHei Light" />
-        <TextBlock
+            <TextBlock
             x:Name="textBlock3"
             Grid.Row="1"
             Margin="10,80,0,0"
@@ -54,7 +55,7 @@
             VerticalAlignment="Top"
             Text="Prezime:"
             TextWrapping="Wrap" Height="20" Width="61" d:LayoutOverrides="LeftMargin, RightMargin" FontFamily="Microsoft JhengHei Light" />
-        <TextBlock
+            <TextBlock
             x:Name="textBlock4"
             Grid.Row="1"
             Margin="10,123,0,0"
@@ -63,7 +64,7 @@
             RenderTransformOrigin="0.598,2.285"
             Text="JMBG:"
             TextWrapping="Wrap" Height="20" Width="45" d:LayoutOverrides="LeftMargin, RightMargin" FontFamily="Microsoft JhengHei Light" />
-        <TextBlock
+            <TextBlock
             x:Name="textBlock5"
             Grid.Row="1"
             Width="98"
@@ -72,7 +73,7 @@
             VerticalAlignment="Top"
             Text="Adresa stanovanja:"
             TextWrapping="Wrap" Height="40" d:LayoutOverrides="LeftMargin, RightMargin" FontFamily="Microsoft JhengHei Light" />
-        <TextBox
+            <TextBox
             x:Name="textIme"
             Grid.Row="1"
             Margin="131,34,120,0"
@@ -80,7 +81,7 @@
             PlaceholderText="Ime"
             Text=""
             TextWrapping="Wrap" Height="32" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
-        <TextBox
+            <TextBox
             x:Name="textImeOca"
             Grid.Row="1"
             Width="105"
@@ -90,7 +91,7 @@
             PlaceholderText="Ime oca"
             Text=""
             TextWrapping="Wrap" Height="32" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
-        <TextBox
+            <TextBox
             x:Name="textPrezime"
             Grid.Row="1"
             Margin="131,75,10,0"
@@ -99,7 +100,7 @@
             RenderTransformOrigin="-0.021,0.166"
             Text=""
             TextWrapping="Wrap" Height="32" d:LayoutOverrides="LeftMargin, RightMargin" />
-        <TextBox
+            <TextBox
             x:Name="textJMBG"
             Grid.Row="1"
             Margin="131,118,10,0"
@@ -109,7 +110,7 @@
             Text=""
             TextWrapping="Wrap"
             d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition" Height="32" />
-        <TextBox
+            <TextBox
             x:Name="textUlica"
             Grid.Row="1"
             Margin="131,165,10,0"
@@ -118,7 +119,7 @@
             Text=""
             TextWrapping="Wrap"
             d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" Height="32" />
-        <TextBox
+            <TextBox
             x:Name="textGrad"
             Grid.Row="1"
             Margin="131,202,10,0"
@@ -126,28 +127,28 @@
             PlaceholderText="Grad"
             Text=""
             TextWrapping="Wrap" Height="32" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
-        <TextBox
+            <TextBox
             x:Name="textPostanskiBroj"
             Grid.Row="1"
             Margin="131,239,120,268"
             PlaceholderText="Postanski br."
             Text=""
             TextWrapping="Wrap" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
-        <ComboBox
+            <ComboBox
             x:Name="comboDrzava"
             Grid.Row="1"
             Width="105"
             Margin="0,239,10,268"
             HorizontalAlignment="Right"
             PlaceholderText="Drzava" VerticalAlignment="Stretch" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
-        <TextBlock
+            <TextBlock
             x:Name="textBlock6"
             Grid.Row="1"
             Margin="10,0,0,222"
             HorizontalAlignment="Left"
             Text="Telefon:"
             TextWrapping="Wrap" VerticalAlignment="Bottom" Height="32" Width="56" d:LayoutOverrides="LeftMargin, RightMargin" FontFamily="Microsoft JhengHei Light" />
-        <TextBlock
+            <TextBlock
             x:Name="textBlock7"
             Grid.Row="1"
             Margin="10,0,0,194"
@@ -155,7 +156,7 @@
             VerticalAlignment="Bottom"
             Text="E-mail:"
             TextWrapping="Wrap" Height="20" Width="61" d:LayoutOverrides="LeftMargin, RightMargin" FontFamily="Microsoft JhengHei Light" />
-        <TextBox
+            <TextBox
             x:Name="textTelefon1"
             Grid.Row="1"
             Margin="131,0,158,228"
@@ -163,7 +164,7 @@
             PlaceholderText="+000"
             Text=""
             TextWrapping="Wrap" VerticalAlignment="Bottom" Height="32" d:LayoutOverrides="LeftMargin, RightMargin" />
-        <TextBox
+            <TextBox
             x:Name="textTelefon2"
             Grid.Row="1"
             Width="132"
@@ -173,14 +174,14 @@
             PlaceholderText="0000000"
             Text=""
             TextWrapping="Wrap" VerticalAlignment="Bottom" Height="32" d:LayoutOverrides="LeftMargin, RightMargin" />
-        <TextBlock
+            <TextBlock
             x:Name="textBlock8"
             Grid.Row="1"
             Margin="0,0,147,248"
             HorizontalAlignment="Right"
             Text="-"
             TextWrapping="Wrap" VerticalAlignment="Bottom" Height="12" Width="6" d:LayoutOverrides="LeftMargin, RightMargin" />
-        <TextBox
+            <TextBox
             x:Name="textBox2"
             Grid.Row="1"
             Margin="131,0,10,187"
@@ -189,13 +190,13 @@
             Text=""
             TextWrapping="Wrap"
             d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition" Height="32" />
-        <CheckBox
+            <CheckBox
             x:Name="checkUslov"
             Grid.Row="1"
             Margin="10,0,10,138"
             VerticalAlignment="Bottom"
             Content="Ovim potvrđujem da sam pročitao/la odredbe i uvjete za korištenje" HorizontalAlignment="Stretch" Height="45" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" FontFamily="Microsoft JhengHei Light" FontWeight="Bold" />
-        <TextBlock
+            <TextBlock
             x:Name="textBlock9"
             Grid.Row="1"
             Margin="10,0,0,110"
@@ -203,7 +204,7 @@
             VerticalAlignment="Bottom"
             Text="Napomena:"
             TextWrapping="Wrap" Height="20" Width="81" d:LayoutOverrides="LeftMargin, RightMargin" FontFamily="Microsoft JhengHei Light" />
-        <TextBox
+            <TextBox
             x:Name="textBox"
             Grid.Row="1"
             Margin="10,0,10,73"
@@ -212,7 +213,7 @@
             Text=""
             TextWrapping="Wrap"
             d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition" Height="32" />
-        <Button
+            <Button
             x:Name="buttonRegistracija"
             Grid.Row="1"
             Margin="75,0,75,15"
@@ -220,7 +221,9 @@
             VerticalAlignment="Bottom"
             Content="Registracija"
             d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" Background="White" Height="41" />
-        <Image x:Name="image" Margin="10,6,0,10" Source="ms-appx:///Assets/Logo.png" HorizontalAlignment="Left" Width="95" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition"/>
+            <Image x:Name="image" Margin="10,6,0,10" Source="ms-appx:///Assets/Logo.png" HorizontalAlignment="Left" Width="95" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition"/>
+
+        </Grid>
 
     </Grid>
 </Page>

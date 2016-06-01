@@ -5,7 +5,9 @@
     xmlns:local="using:BSF"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+    xmlns:viewmodels ="using:BSF.ViewModel"
+    mc:Ignorable="d"
+    >
     <Grid Background="#FFE6E6E6">
         <Grid.RowDefinitions>
             <RowDefinition Height="319*" />
@@ -41,7 +43,8 @@
         	Margin="75,32,75,0"
         	HorizontalAlignment="Stretch"
         	VerticalAlignment="Top"
-        	Content="Registracija" FontSize="22" d:LayoutOverrides="LeftMargin, RightMargin" Background="White" Height="67" />
+        	Content="Registracija" FontSize="22" d:LayoutOverrides="LeftMargin, RightMargin" Background="White" Height="67"
+            Command="{x:Bind viewModel.NavigateToRegistration}"/>
         <Button
         	x:Name="bt_Conversion"
         	Grid.Row="1"
