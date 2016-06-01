@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="BSF.ReferentAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BSF"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="#FFE6E6E6">
+        <Image x:Name="image" Margin="110,15,110,0" Source="ms-appx:///Assets/Logo.png" VerticalAlignment="Top" d:LayoutOverrides="Width, LeftPosition, RightPosition" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,150,0,0" TextWrapping="Wrap" Text="Referent Panel" VerticalAlignment="Top" FontFamily="Microsoft JhengHei UI Light" FontSize="30"/>
+        <Button x:Name="button_referentToSelf" Content="Moj racun" VerticalAlignment="Top" Margin="85,230,85,0" HorizontalAlignment="Stretch" Height="54" d:LayoutOverrides="LeftPosition, RightPosition"/>
+        <Button x:Name="button_referentToRefPanel" Content="Usluge" VerticalAlignment="Stretch" Margin="85,313,85,273" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
+
+    </Grid>
+</Page>
