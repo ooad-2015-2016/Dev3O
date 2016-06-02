@@ -63,7 +63,16 @@ namespace BSF.ViewModel
                 OnPropertyChanged("TermsOfUse");
             }
         }
+        private bool IsDigitsOnly(string str)
+        {
+            foreach (char c in str)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
 
+            return true;
+        }
 
 
         public RegistrationViewModel(MainPageViewModel parent)
@@ -90,7 +99,7 @@ namespace BSF.ViewModel
             return true;
         }
 
-        private void register(object parameter)
+        private async void register(object parameter)
         {
             #region Person
             NewPerson.Name = Name;
@@ -114,15 +123,51 @@ namespace BSF.ViewModel
 
             using (var db = new BankDbContext())
             {
-                db.Persons.Add(NewPerson);
-                db.BankAccounts.Add(NewBankAccount);
-                db.SaveChanges();
-                var message = new MessageDialog("Registracija uspješna!", "Uspjeh!");
-                message.ShowAsync();
+                if (Name.Length == 0 || SurName.Length == 0 || NameOfFather.Length == 0 || JMBG.Length == 0
+                    || Adress.Length == 0 || City.Length == 0 || TelephoneNumber1.Length == 0 || TelephoneNumber2.Length == 0
+                    || Email.Length == 0)
+
+                {
+                    var notValidated = new MessageDialog("Niste unijeli sve podatke");
+                    await notValidated.ShowAsync();
+                }
+                else if (JMBG.Length != 13 || !IsDigitsOnly(JMBG))
+                {
+                    var notValidated = new MessageDialog("JMBG nije u ispravnom formau");
+                    await notValidated.ShowAsync();
+                }
+                else if (TelephoneNumber1.Length != 4 || !TelephoneNumber1.StartsWith("+") || !IsDigitsOnly(TelephoneNumber1.Substring(1)))
+                {
+                    var notValidated = new MessageDialog("Telefon nije u ispravnom formatu");
+                    await notValidated.ShowAsync();
+                }
+                else if(TelephoneNumber2.Length != 8 || !IsDigitsOnly(TelephoneNumber2))
+                {
+                    var notValidated = new MessageDialog("Telefon nije u ispravnom formatu");
+                    await notValidated.ShowAsync();
+                }
+                else if(!Email.Contains("@"))
+                {
+                    var notValidated = new MessageDialog("Email nije u ispravnom formatu");
+                    await notValidated.ShowAsync();
+                }
+                else if (TermsOfUse == false)
+                {
+                    var notValidated = new MessageDialog("Morate prihvatiti odredbe i uvjete koristenja");
+                    await notValidated.ShowAsync();
+                }
+                else {
+                    db.Persons.Add(NewPerson);
+                    db.BankAccounts.Add(NewBankAccount);
+                    db.SaveChanges();
+                    var message = new MessageDialog("Registracija uspješna!", "Uspjeh!");
+                    await message.ShowAsync();
+                    MyNavigationService.Navigate(typeof(MainPage), new MainPageViewModel());
+                }
             }
-            MyNavigationService.Navigate(typeof(MainPage), new MainPageViewModel());
-        }         
-        
+
+        }
+
         protected void OnPropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)
