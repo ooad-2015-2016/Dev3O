@@ -33,6 +33,13 @@ namespace BSF
             this.Suspending += OnSuspending;
             using(var database = new DAL.BankDbContext())
             {
+                try
+                {
+                    database.Database.Migrate();
+                }catch(Exception e)
+                {
+
+                }
                 database.Database.EnsureCreated();
             }
         }

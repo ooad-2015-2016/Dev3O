@@ -35,8 +35,9 @@
         	Grid.Row="1"
         	Margin="75,114,75,140"
         	HorizontalAlignment="Stretch"
-        	VerticalAlignment="Stretch"
-        	Content="Prijava" d:LayoutOverrides="LeftMargin, RightMargin" FontSize="22" Background="White" Height="67" />
+        	VerticalAlignment="Center"
+        	Content="Prijava" d:LayoutOverrides="LeftMargin, RightMargin" FontSize="22" Background="White" Height="67"
+            Command="{x:Bind viewModel.NavigateToLogin}"/>
         <Button
         	x:Name="bt_Registration"
         	Grid.Row="1"

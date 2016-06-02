@@ -19,6 +19,10 @@ namespace BSF.DAL
         public string Name { get; set; }
         [Required]
         public string SurName { get; set; }
+        [Required]
+        public string JMBG { get; set; }
+        [Required]
+        public int MyProperty { get; set; }
         public string NameOfFather { get; set; }
         [Required]
         public string Adress { get; set; }
@@ -32,8 +36,6 @@ namespace BSF.DAL
         public string Email { get; set; }
         [Required]
         public string Type { get; set; }
-        [Required]
-        public BankAccount Account { get; set; }
         [Required]
         public bool Validated { get; set; }
     }

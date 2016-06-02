@@ -4,30 +4,21 @@ using Microsoft.Data.Entity.Migrations;
 
 namespace BSF.Migrations
 {
-    public partial class InitialMigration : Migration
+    public partial class MigrationOne : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "BankAccount",
-                columns: table => new
-                {
-                    BankAccountID = table.Column<int>(nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Balance = table.Column<double>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_BankAccount", x => x.BankAccountID);
-                });
-            migrationBuilder.CreateTable(
                 name: "Person",
                 columns: table => new
                 {
-                    AccoutnId = table.Column<int>(nullable: false),
+                    AccoutnId = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Adress = table.Column<string>(nullable: false),
                     City = table.Column<string>(nullable: false),
                     Email = table.Column<string>(nullable: false),
+                    JMBG = table.Column<string>(nullable: false),
+                    MyProperty = table.Column<int>(nullable: false),
                     Name = table.Column<string>(nullable: false),
                     NameOfFather = table.Column<string>(nullable: true),
                     Password = table.Column<string>(nullable: false),
@@ -41,11 +32,24 @@ namespace BSF.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Person", x => x.AccoutnId);
+                });
+            migrationBuilder.CreateTable(
+                name: "BankAccount",
+                columns: table => new
+                {
+                    BankAccountID = table.Column<int>(nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Balance = table.Column<double>(nullable: false),
+                    OwnerAccoutnId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BankAccount", x => x.BankAccountID);
                     table.ForeignKey(
-                        name: "FK_Person_BankAccount_AccoutnId",
-                        column: x => x.AccoutnId,
-                        principalTable: "BankAccount",
-                        principalColumn: "BankAccountID",
+                        name: "FK_BankAccount_Person_OwnerAccoutnId",
+                        column: x => x.OwnerAccoutnId,
+                        principalTable: "Person",
+                        principalColumn: "AccoutnId",
                         onDelete: ReferentialAction.Cascade);
                 });
             migrationBuilder.CreateTable(
@@ -108,8 +112,8 @@ namespace BSF.Migrations
         {
             migrationBuilder.DropTable("MobileVerification");
             migrationBuilder.DropTable("Transaction");
-            migrationBuilder.DropTable("Person");
             migrationBuilder.DropTable("BankAccount");
+            migrationBuilder.DropTable("Person");
         }
     }
 }

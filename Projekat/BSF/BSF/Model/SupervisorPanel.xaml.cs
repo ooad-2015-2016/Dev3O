@@ -1,5 +1,4 @@
-﻿using BSF.ViewModel;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,23 +15,16 @@ using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace BSF.View
+namespace BSF.Model
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Registration : Page
+    public sealed partial class SupervisorPanel : Page
     {
-        private RegistrationViewModel viewModel;
-
-        public Registration()
+        public SupervisorPanel()
         {
             this.InitializeComponent();
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            viewModel = (RegistrationViewModel)e.Parameter;
         }
     }
 }

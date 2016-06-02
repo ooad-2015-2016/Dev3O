@@ -22,6 +22,9 @@ namespace BSF.Migrations
 
                     b.Property<double>("Balance");
 
+                    b.Property<int?>("OwnerAccoutnId")
+                        .IsRequired();
+
                     b.HasKey("BankAccountID");
                 });
 
@@ -44,7 +47,8 @@ namespace BSF.Migrations
 
             modelBuilder.Entity("BSF.DAL.Person", b =>
                 {
-                    b.Property<int>("AccoutnId");
+                    b.Property<int>("AccoutnId")
+                        .ValueGeneratedOnAdd();
 
                     b.Property<string>("Adress")
                         .IsRequired();
@@ -54,6 +58,11 @@ namespace BSF.Migrations
 
                     b.Property<string>("Email")
                         .IsRequired();
+
+                    b.Property<string>("JMBG")
+                        .IsRequired();
+
+                    b.Property<int>("MyProperty");
 
                     b.Property<string>("Name")
                         .IsRequired();
@@ -102,18 +111,18 @@ namespace BSF.Migrations
                     b.HasKey("TransactionID");
                 });
 
+            modelBuilder.Entity("BSF.DAL.BankAccount", b =>
+                {
+                    b.HasOne("BSF.DAL.Person")
+                        .WithMany()
+                        .HasForeignKey("OwnerAccoutnId");
+                });
+
             modelBuilder.Entity("BSF.DAL.MobileVerification", b =>
                 {
                     b.HasOne("BSF.DAL.Person")
                         .WithMany()
                         .HasForeignKey("VerifyingAccoutnId");
-                });
-
-            modelBuilder.Entity("BSF.DAL.Person", b =>
-                {
-                    b.HasOne("BSF.DAL.BankAccount")
-                        .WithOne()
-                        .HasForeignKey("BSF.DAL.Person", "AccoutnId");
                 });
 
             modelBuilder.Entity("BSF.DAL.Transaction", b =>

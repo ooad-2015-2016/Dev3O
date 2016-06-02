@@ -19,10 +19,15 @@ namespace BSF.ViewModel
         {
             MyNavigationService = new NavigationService();
             NavigateToRegistration = new RelayCommand<object>(registration);
+            NavigateToLogin = new RelayCommand<object>(login);
         }
         private void registration(object parameter)
         {
             MyNavigationService.Navigate(typeof(Registration), new RegistrationViewModel(this));
+        }
+        private void login(object parameter)
+        {
+            MyNavigationService.Navigate(typeof(Login), new LoginViewModel(this));
         }
     }
 }

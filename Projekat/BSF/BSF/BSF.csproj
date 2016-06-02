@@ -98,12 +98,12 @@
     <Compile Include="Helpers\INavigation.cs" />
     <Compile Include="Helpers\NavigationService.cs" />
     <Compile Include="Helpers\RelayCommand.cs" />
-    <Compile Include="Model\DAL\BankDbContext.cs" />
-    <Compile Include="Migrations\20160529172452_InitialMigration.cs" />
-    <Compile Include="Migrations\20160529172452_InitialMigration.designer.cs">
-      <DependentUpon>20160529172452_InitialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\20160602110116_MigrationOne.cs" />
+    <Compile Include="Migrations\20160602110116_MigrationOne.designer.cs">
+      <DependentUpon>20160602110116_MigrationOne.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\BankDbContextModelSnapshot.cs" />
+    <Compile Include="Model\DAL\BankDbContext.cs" />
     <Compile Include="Model\Classes\BankAccount.cs" />
     <Compile Include="Model\Classes\MobileVerification.cs" />
     <Compile Include="Model\Classes\Person.cs" />
@@ -111,8 +111,15 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\SupervisorPanel.xaml.cs">
+      <DependentUpon>SupervisorPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\LoginViewModel.cs" />
     <Compile Include="ViewModel\MainPageViewModel.cs" />
     <Compile Include="ViewModel\RegistrationViewModel.cs" />
+    <Compile Include="View\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\Registration.xaml.cs">
       <DependentUpon>Registration.xaml</DependentUpon>
     </Compile>
@@ -125,7 +132,7 @@
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
-    <Content Include="BSF_TemporaryKey.pfx">
+    <Content Include=".pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
@@ -149,6 +156,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Model\SupervisorPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login.xaml">
       <SubType>Designer</SubType>
