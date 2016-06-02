@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BSF.ViewModel;
+using BSF.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +24,17 @@ namespace BSF.View
     /// </summary>
     public sealed partial class Login : Page
     {
+        LoginViewModel viewModel;
+
         public Login()
         {
             this.InitializeComponent();
+            
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            viewModel = (LoginViewModel)e.Parameter;
         }
     }
 }

@@ -2,7 +2,7 @@
     x:Class="BSF.Model.SupervisorPanel"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:BSF.Model"
+    xmlns:local="using:BSF.Model"  
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
@@ -16,26 +16,6 @@
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="105,35,0,32" TextWrapping="Wrap" Text="Supervizor panel" FontSize="30" FontFamily="Microsoft JhengHei UI Light" d:LayoutOverrides="Height, TopPosition, BottomPosition"/>
         <Border BorderBrush="Black" BorderThickness="1" Height="0" Grid.Row="1" VerticalAlignment="Top"/>
         <Border BorderBrush="Black" BorderThickness="1" Height="3" VerticalAlignment="Bottom"/>
-        <ListView x:Name="listView" Margin="10,10,10,66" Grid.Row="1">
-            <DataTemplate x:Name = "listOfAccounts">
-                <Border BorderThickness="1" Padding="5">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text=""/>
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text=""/>
-                        <TextBox Grid.Row="0" Grid.Column="2" Text=""/>
-                        <Button Grid.Row="0" Grid.Column="3">Tic</Button>
-                    </Grid>
-                </Border>
-            </DataTemplate>
-        </ListView>
+        
     </Grid>
 </Page>

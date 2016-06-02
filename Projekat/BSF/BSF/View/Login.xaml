@@ -37,7 +37,7 @@
             Margin="28,148,24,0"
             VerticalAlignment="Top"
             PlaceholderText=""
-            Text=""
+            Text="{x:Bind viewModel.Username, Mode=TwoWay}"
             TextWrapping="Wrap" Height="32" d:LayoutOverrides="LeftMargin, RightMargin" />
         <TextBlock
             x:Name="textBoxKorisnickoIme"
@@ -51,7 +51,7 @@
             x:Name="textBoxSifraUnos"
             Grid.Row="1"
             Margin="28,0,24,217"
-            PlaceholderText=""
+            PlaceholderText="{x:Bind viewModel.Password, Mode=TwoWay}"
             Text=""
             TextWrapping="Wrap" d:LayoutOverrides="LeftMargin, RightMargin" Height="32" VerticalAlignment="Bottom" />
         <TextBlock
@@ -68,7 +68,8 @@
             Margin="75,0,75,81"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Bottom"
-            Content="Prijavite se" Height="45" d:LayoutOverrides="LeftMargin, RightMargin" FontSize="20" Background="White" />
+            Content="Prijavite se" Height="45" d:LayoutOverrides="LeftMargin, RightMargin" FontSize="20" Background="White"
+            Command="{x:Bind viewModel.Login}"/>
         <Image x:Name="image" Margin="10,10,0,40" Source="ms-appx:///Assets/Logo.png" HorizontalAlignment="Left" Width="95" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition"/>
 
 

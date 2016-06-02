@@ -54,7 +54,16 @@ namespace BSF.ViewModel
         public string TelephoneNumber1 { get; set; }
         public string TelephoneNumber2 { get; set; }
         public string Email { get; set; }
-        public Boolean? TermsOfUse { get; set; }
+        private bool? _TermsOfUse;
+
+        public bool? TermsOfUse
+        {
+            get { return _TermsOfUse; }
+            set { _TermsOfUse = value;
+                OnPropertyChanged("TermsOfUse");
+            }
+        }
+
 
 
         public RegistrationViewModel(MainPageViewModel parent)
@@ -65,7 +74,8 @@ namespace BSF.ViewModel
             MyNavigationService = new NavigationService();
             Back = new RelayCommand<object>(goBack);
             Register = new RelayCommand<object>(register, canRegister);
-            Adress = "Proba";
+            TermsOfUse = false;
+
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

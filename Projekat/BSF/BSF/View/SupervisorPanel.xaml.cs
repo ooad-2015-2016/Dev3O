@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BSF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,14 @@ namespace BSF.Model
     /// </summary>
     public sealed partial class SupervisorPanel : Page
     {
+        SupervisorPanelViewModel viewModel;
         public SupervisorPanel()
         {
             this.InitializeComponent();
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            viewModel = (SupervisorPanelViewModel) e.Parameter;
         }
     }
 }

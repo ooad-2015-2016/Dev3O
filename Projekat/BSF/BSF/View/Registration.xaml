@@ -222,7 +222,7 @@
             VerticalAlignment="Bottom"
             Content="Registracija"
             d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" Background="White" Height="41"
-            Command="{x:Bind viewModel.Register}"/>
+            Command="{x:Bind viewModel.Register,Mode=TwoWay}"/>
             <Image x:Name="image" Margin="10,6,0,10" Source="ms-appx:///Assets/Logo.png" HorizontalAlignment="Left" Width="95" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition"/>
 
         </Grid>
