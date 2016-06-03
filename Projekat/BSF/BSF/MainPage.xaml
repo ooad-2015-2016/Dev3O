@@ -52,7 +52,8 @@
         	Margin="75,0,75,57"
         	HorizontalAlignment="Stretch"
         	VerticalAlignment="Bottom"
-        	Content="Konverzija valuta" FontSize="22" d:LayoutOverrides="LeftMargin, RightMargin" Background="White" Height="67" />
+        	Content="Konverzija valuta" FontSize="22" d:LayoutOverrides="LeftMargin, RightMargin" Background="White" Height="67" 
+            Command="{x:Bind viewModel.NavigateToKonverzija}"/>
         <Image x:Name="image" Margin="91,128,87,10" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition, TopPosition, BottomPosition" Source="ms-appx:///Assets/Logo.png"/>
 
 
