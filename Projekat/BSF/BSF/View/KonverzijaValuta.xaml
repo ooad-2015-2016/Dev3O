@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-  
+
 
     <Grid Background="#FFE6E6E6">
         <Grid.RowDefinitions>
@@ -20,7 +20,7 @@
             FontSize="28"
             Text="Konverzija valuta"
             TextWrapping="Wrap" FontFamily="Microsoft JhengHei Light" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" TextAlignment="Center"/>
-        
+
         <Border
             Height="2"
             Margin="0,0,0,3"
@@ -47,17 +47,17 @@
         <TextBox
             x:Name="textBoxPretvoreniIznos"
             Grid.Row="1"
-            Margin="28,0,24,217"
+            Margin="28,0,24,131"
             PlaceholderText="{x:Bind viewModel.PretvoreniIznos, Mode=TwoWay}"
             Text=""
-            TextWrapping="Wrap" d:LayoutOverrides="LeftMargin, RightMargin" Height="32" VerticalAlignment="Bottom" />
+            TextWrapping="Wrap" Height="32" VerticalAlignment="Bottom" />
         <TextBlock
             x:Name="textBoxIznosUDolarima"
             Grid.Row="1"
-            Margin="29,230,0,254"
+            Margin="29,316,0,168"
             HorizontalAlignment="Left"
             Text="Iznos u $:"
-            TextWrapping="Wrap" Width="145" FontFamily="Microsoft JhengHei Light" FontSize="18" d:LayoutOverrides="TopPosition, BottomPosition" />
+            TextWrapping="Wrap" Width="145" FontFamily="Microsoft JhengHei Light" FontSize="18" />
 
         <Button
             x:Name="buttonPretvori"
@@ -68,6 +68,10 @@
             Content="Konvertuj" Height="45" d:LayoutOverrides="LeftMargin, RightMargin" FontSize="20" Background="White"
             Command="{x:Bind viewModel.Pretvori}"/>
         <Image x:Name="image" Margin="10,10,0,40" Source="ms-appx:///Assets/Logo.png" HorizontalAlignment="Left" Width="95" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="29,215,0,0" Grid.Row="1" VerticalAlignment="Top" Width="307">
+            <RadioButton x:Name="radioButton_Copy1" Content="Dolar ($)" HorizontalAlignment="Left" Height="41" Margin="9,9,0,-1" VerticalAlignment="Top" Width="97"/>
+        </Border>
+        <RadioButton x:Name="radioButton" Content="Euro (€)" HorizontalAlignment="Left" Height="41" Margin="216,225,0,0" Grid.Row="1" VerticalAlignment="Top" Width="76"/>
 
 
     </Grid>
