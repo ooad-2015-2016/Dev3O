@@ -112,6 +112,10 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\KonverzijaViewModel.cs" />
+    <Compile Include="View\KonverzijaValuta.xaml.cs">
+      <DependentUpon>KonverzijaValuta.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\SupervisorPanel.xaml.cs">
       <DependentUpon>SupervisorPanel.xaml</DependentUpon>
     </Compile>
@@ -155,6 +159,10 @@
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\KonverzijaValuta.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\SupervisorPanel.xaml">
       <SubType>Designer</SubType>

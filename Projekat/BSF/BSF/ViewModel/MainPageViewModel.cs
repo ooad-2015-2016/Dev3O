@@ -15,11 +15,13 @@ namespace BSF.ViewModel
         public INavigation MyNavigationService { get; set; }
         public ICommand NavigateToRegistration { get; set; }
         public ICommand NavigateToLogin { get; set; }
+        public ICommand NavigateToKonverzija { get; set; }
         public MainPageViewModel()
         {
             MyNavigationService = new NavigationService();
             NavigateToRegistration = new RelayCommand<object>(registration);
             NavigateToLogin = new RelayCommand<object>(login);
+            NavigateToKonverzija = new RelayCommand<object> (pretvori);
         }
         private void registration(object parameter)
         {
@@ -28,6 +30,10 @@ namespace BSF.ViewModel
         private void login(object parameter)
         {
             MyNavigationService.Navigate(typeof(Login), new LoginViewModel(this));
+        }
+        private void pretvori(object parameter)
+        {
+            MyNavigationService.Navigate(typeof(BlankPage1), new KonverzijaViewModel(this));
         }
     }
 }

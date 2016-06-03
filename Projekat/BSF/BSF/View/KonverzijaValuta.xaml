@@ -1,0 +1,74 @@
+﻿<Page
+    x:Class="BSF.View.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BSF.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+  
+
+    <Grid Background="#FFE6E6E6">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*" />
+            <RowDefinition Height="51*" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            x:Name="textBoxNaslov"
+            Margin="110,15,110,25"
+            FontSize="28"
+            Text="Konverzija valuta"
+            TextWrapping="Wrap" FontFamily="Microsoft JhengHei Light" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" TextAlignment="Center"/>
+        
+        <Border
+            Height="2"
+            Margin="0,0,0,3"
+            VerticalAlignment="Bottom"
+            BorderBrush="Black"
+            BorderThickness="1" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+
+        <TextBox
+            x:Name="textBoxIznosZaKonvertirati"
+            Grid.Row="1"
+            Margin="28,148,24,0"
+            VerticalAlignment="Top"
+            PlaceholderText=""
+            Text="{x:Bind viewModel.IznosZaKonvertirati, Mode=TwoWay}"
+            TextWrapping="Wrap" Height="32" d:LayoutOverrides="LeftMargin, RightMargin" />
+        <TextBlock
+            x:Name="textBoxIznos"
+            Grid.Row="1"
+            Margin="29,113,144,0"
+            VerticalAlignment="Top"
+            Text="Unesite iznos:"
+            TextWrapping="Wrap" Height="66" FontFamily="Microsoft JhengHei Light" FontSize="18" />
+
+        <TextBox
+            x:Name="textBoxPretvoreniIznos"
+            Grid.Row="1"
+            Margin="28,0,24,217"
+            PlaceholderText="{x:Bind viewModel.PretvoreniIznos, Mode=TwoWay}"
+            Text=""
+            TextWrapping="Wrap" d:LayoutOverrides="LeftMargin, RightMargin" Height="32" VerticalAlignment="Bottom" />
+        <TextBlock
+            x:Name="textBoxIznosUDolarima"
+            Grid.Row="1"
+            Margin="29,230,0,254"
+            HorizontalAlignment="Left"
+            Text="Iznos u $:"
+            TextWrapping="Wrap" Width="145" FontFamily="Microsoft JhengHei Light" FontSize="18" d:LayoutOverrides="TopPosition, BottomPosition" />
+
+        <Button
+            x:Name="buttonPretvori"
+            Grid.Row="1"
+            Margin="75,0,75,81"
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Bottom"
+            Content="Konvertuj" Height="45" d:LayoutOverrides="LeftMargin, RightMargin" FontSize="20" Background="White"
+            Command="{x:Bind viewModel.Pretvori}"/>
+        <Image x:Name="image" Margin="10,10,0,40" Source="ms-appx:///Assets/Logo.png" HorizontalAlignment="Left" Width="95" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition"/>
+
+
+    </Grid>
+</Page>
