@@ -61,7 +61,7 @@ namespace BSF.ViewModel
             }
             if(User != null)
             {
-                if (!User.Validated)
+                if (User.Validated == false)
                 {
                     var message = new MessageDialog("Vas racun jos nije verifikovan!", "Greska!");
                     message.ShowAsync();

@@ -14,10 +14,10 @@ namespace BSF.ViewModel
     public class SupervisorPanelViewModel : INotifyPropertyChanged
     {
         public INavigation MyNavigationServis { get; set; }
-        private ObservableCollection<Person> _PenndingAccounts;
+        private List<Person> _PenndingAccounts;
         private LoginViewModel loginViewModel;
 
-        public ObservableCollection<Person> PenndingAccounts
+        public List<Person> PenndingAccounts
         {
             get { return _PenndingAccounts; }
             set { _PenndingAccounts = value;
@@ -27,16 +27,21 @@ namespace BSF.ViewModel
 
         public SupervisorPanelViewModel()
         {
-            MyNavigationServis = new NavigationService();
-            using(var db = new BankDbContext())
-            {
-                PenndingAccounts = (ObservableCollection<Person>) db.Persons.Where(x => x.Validated == false);
-            }
+           
         }
 
         public SupervisorPanelViewModel(LoginViewModel loginViewModel)
         {
             this.loginViewModel = loginViewModel;
+            MyNavigationServis = new NavigationService();
+            using (var db = new BankDbContext())
+            {
+                PenndingAccounts = new List<Person>();
+                foreach(var person in db.Persons)
+                {
+                    if (person.Validated == false) PenndingAccounts.Add(person);
+                }
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

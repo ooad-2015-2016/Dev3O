@@ -114,10 +114,10 @@
     </Compile>
     <Compile Include="ViewModel\GPSSystemViewModel.cs" />
     <Compile Include="ViewModel\KonverzijaViewModel.cs" />
+    <Compile Include="ViewModel\ReferentAccount.cs" />
     <Compile Include="View\GPSSystemView.xaml.cs">
       <DependentUpon>GPSSystemView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ViewModel\ReferentAccount.cs" />
     <Compile Include="ViewModel\UserAccountViewModel.cs" />
     <Compile Include="View\KonverzijaValuta.xaml.cs">
       <DependentUpon>KonverzijaValuta.xaml</DependentUpon>
