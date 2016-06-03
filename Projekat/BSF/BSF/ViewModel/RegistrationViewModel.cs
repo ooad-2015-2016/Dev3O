@@ -136,7 +136,7 @@ namespace BSF.ViewModel
                     var notValidated = new MessageDialog("JMBG nije u ispravnom formau");
                     await notValidated.ShowAsync();
                 }
-                else if (TelephoneNumber1.Length != 4 || !TelephoneNumber1.StartsWith("+") || !IsDigitsOnly(TelephoneNumber1.Substring(1)))
+               /* else if (TelephoneNumber1.Length != 4 || !TelephoneNumber1.StartsWith("+") || !IsDigitsOnly(TelephoneNumber1.Substring(1)))
                 {
                     var notValidated = new MessageDialog("Telefon nije u ispravnom formatu");
                     await notValidated.ShowAsync();
@@ -145,7 +145,7 @@ namespace BSF.ViewModel
                 {
                     var notValidated = new MessageDialog("Telefon nije u ispravnom formatu");
                     await notValidated.ShowAsync();
-                }
+                }*/
                 else if(!Email.Contains("@"))
                 {
                     var notValidated = new MessageDialog("Email nije u ispravnom formatu");

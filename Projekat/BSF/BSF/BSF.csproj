@@ -113,8 +113,16 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\KonverzijaViewModel.cs" />
+    <Compile Include="ViewModel\ReferentAccount.cs" />
+    <Compile Include="ViewModel\UserAccountViewModel.cs" />
     <Compile Include="View\KonverzijaValuta.xaml.cs">
       <DependentUpon>KonverzijaValuta.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReferentAccountMain.xaml.cs">
+      <DependentUpon>ReferentAccountMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\ReferentAccountPanel.xaml.cs">
+      <DependentUpon>ReferentAccountPanel.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\SupervisorPanel.xaml.cs">
       <DependentUpon>SupervisorPanel.xaml</DependentUpon>
@@ -164,19 +172,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="View\ReferentAccountMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ReferentAccountPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\SupervisorPanel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\Login.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ReferentAccountMain.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\ReferentAccoutWork.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

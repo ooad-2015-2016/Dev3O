@@ -6,6 +6,8 @@ using System.Windows.Input;
 using System.Linq;
 using BSF.Model;
 using System.Collections.Generic;
+using Windows.UI.Popups;
+using BSF.View;
 
 namespace BSF.ViewModel
 {
@@ -59,7 +61,15 @@ namespace BSF.ViewModel
             }
             if(User != null)
             {
+                if (!User.Validated)
+                {
+                    var message = new MessageDialog("Vas racun jos nije verifikovan!", "Greska!");
+                    message.ShowAsync();
+                    return;
+                }
                 if (User.Type == "Supervisor") MyNavigationService.Navigate(typeof(SupervisorPanel), new SupervisorPanelViewModel(this));
+                else if (User.Type == "User") MyNavigationService.Navigate(typeof(UserAccount), new UserAccountViewModel(this,ref User));
+                else if (User.Type == "Referent") MyNavigationService.Navigate(typeof(ReferentAccountMain), new ReferentAccount(this,ref User));
             }
         }
 
