@@ -46,7 +46,9 @@ namespace BSF.Model
                 db.SaveChanges();
                 viewModel.PenndingAccounts.Remove(boundData);
                 listView_transactions.ItemsSource = null;
-                listView_transactions.ItemsSource = 
+                var bind = new Binding();
+                bind.Source = viewModel.PenndingAccounts;
+                this.listView_transactions.SetBinding(ListView.ItemsSourceProperty, bind);
             }
         }
     }

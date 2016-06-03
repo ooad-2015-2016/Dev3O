@@ -53,7 +53,7 @@
             Margin="28,0,24,217"
             PlaceholderText="Password: "
             Text="{x:Bind viewModel.Password, Mode=TwoWay}"
-            TextWrapping="Wrap" d:LayoutOverrides="LeftMargin, RightMargin" Height="32" VerticalAlignment="Bottom" />
+            TextWrapping="Wrap" d:LayoutOverrides="LeftMargin, RightMargin" Height="32" VerticalAlignment="Bottom" InputScope="Password" />
         <TextBlock
             x:Name="textBoxSifra"
             Grid.Row="1"
