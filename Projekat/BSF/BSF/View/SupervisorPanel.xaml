@@ -17,7 +17,7 @@
         <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="105,35,0,32" TextWrapping="Wrap" Text="Supervizor panel" FontSize="30" FontFamily="Microsoft JhengHei UI Light" d:LayoutOverrides="Height, TopPosition, BottomPosition"/>
         <Border BorderBrush="Black" BorderThickness="1" Height="0" Grid.Row="1" VerticalAlignment="Top"/>
         <Border BorderBrush="Black" BorderThickness="1" Height="3" VerticalAlignment="Bottom"/>
-        <ListView x:Name="listView_transactions" Margin="10,10,12,25.148" Grid.Row="2" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" ItemsSource="{x:Bind viewModel.PenndingAccounts}">
+        <ListView x:Name="listView_transactions" Margin="10,10,12,25.148" Grid.Row="2" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" ItemsSource="{x:Bind viewModel.PenndingAccounts, Mode=OneWay}">
             <ListView.ItemTemplate>
                 <DataTemplate x:Name = "transactionListTemplate" x:DataType="dat:Person">
                     <Border BorderThickness="1" Padding="5">
@@ -34,7 +34,7 @@
                             <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Bind Name}"/>
                             <TextBlock Grid.Row="0" Grid.Column="1" Text="{x:Bind AccoutnId}"/>
                             <TextBlock Grid.Row="0" Grid.Column="2" Text="{x:Bind Type}"/>
-                            <Button Grid.Row="0" Grid.Column="3" Content="2"/>
+                            <Button Grid.Row="0" Grid.Column="3" Content="2" Click="Button_Click"/>
                         </Grid>
                     </Border>
                 </DataTemplate>

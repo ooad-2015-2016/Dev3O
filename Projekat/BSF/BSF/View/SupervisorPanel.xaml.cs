@@ -35,5 +35,19 @@ namespace BSF.Model
         {
             viewModel = (SupervisorPanelViewModel) e.Parameter;
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var boundData = (Person)((Button)sender).DataContext;
+            using(var db = new BankDbContext())
+            {
+                var person =  db.Persons.Where(x => x.AccoutnId == boundData.AccoutnId).FirstOrDefault();
+                person.Validated = true;
+                db.SaveChanges();
+                viewModel.PenndingAccounts.Remove(boundData);
+                listView_transactions.ItemsSource = null;
+                listView_transactions.ItemsSource = 
+            }
+        }
     }
 }
