@@ -69,9 +69,9 @@
             Command="{x:Bind viewModel.Pretvori}"/>
         <Image x:Name="image" Margin="10,10,0,40" Source="ms-appx:///Assets/Logo.png" HorizontalAlignment="Left" Width="95" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="51" Margin="29,215,0,0" Grid.Row="1" VerticalAlignment="Top" Width="307">
-            <RadioButton x:Name="radioButton_Copy1" Content="Dolar ($)" HorizontalAlignment="Left" Height="41" Margin="9,9,0,-1" VerticalAlignment="Top" Width="97"/>
+            <RadioButton x:Name="radioButton_Copy1"  GroupName="Group1" Content="Dolar ($)" HorizontalAlignment="Left" Height="41" Margin="9,9,0,-1" VerticalAlignment="Top" Width="97"/>
         </Border>
-        <RadioButton x:Name="radioButton" Content="Euro (€)" HorizontalAlignment="Left" Height="41" Margin="216,225,0,0" Grid.Row="1" VerticalAlignment="Top" Width="76"/>
+        <RadioButton x:Name="radioButton" GroupName="Group1" Content="Euro (€)" HorizontalAlignment="Left" Height="41" Margin="216,225,0,0" Grid.Row="1" VerticalAlignment="Top" Width="76"/>
 
 
     </Grid>
