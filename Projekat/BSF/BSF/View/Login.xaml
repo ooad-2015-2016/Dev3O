@@ -51,8 +51,8 @@
             x:Name="textBoxSifraUnos"
             Grid.Row="1"
             Margin="28,0,24,217"
-            PlaceholderText="{x:Bind viewModel.Password, Mode=TwoWay}"
-            Text=""
+            PlaceholderText="Password: "
+            Text="{x:Bind viewModel.Password, Mode=TwoWay}"
             TextWrapping="Wrap" d:LayoutOverrides="LeftMargin, RightMargin" Height="32" VerticalAlignment="Bottom" />
         <TextBlock
             x:Name="textBoxSifra"

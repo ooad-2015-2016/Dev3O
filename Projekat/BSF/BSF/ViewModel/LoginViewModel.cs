@@ -5,6 +5,7 @@ using System.Runtime.CompilerServices;
 using System.Windows.Input;
 using System.Linq;
 using BSF.Model;
+using System.Collections.Generic;
 
 namespace BSF.ViewModel
 {
@@ -19,7 +20,7 @@ namespace BSF.ViewModel
         {
             get { return _Username; }
             set { _Username = value;
-                OnProprertyChanged(); }
+                OnProprertyChanged("Username"); }
         }
 
         private string _Password;
@@ -28,7 +29,7 @@ namespace BSF.ViewModel
         {
             get { return _Password; }
             set { _Password = value;
-                OnProprertyChanged();
+                OnProprertyChanged("Password");
             }
         }
 
@@ -45,7 +46,7 @@ namespace BSF.ViewModel
 
         private bool canLogin(object parameter)
         {
-            if (Username.Length == 0 || Password.Length == 0) return false;
+            //if (Username.Length == 0 || Password.Length == 0) return false;
             return true;
         }
 
@@ -53,7 +54,8 @@ namespace BSF.ViewModel
         {
             using(var db = new BankDbContext())
             {
-                User = (Person)db.Persons.Where(x => x.Username == Username && x.Password == Password).First();
+                List<Person> list = db.Persons.ToList<Person>();
+                User =(Person) list.Where(x => x.Username == Username && x.Password == Password).FirstOrDefault();
             }
             if(User != null)
             {

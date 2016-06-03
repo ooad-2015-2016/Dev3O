@@ -104,7 +104,7 @@ namespace BSF.ViewModel
             NewPerson.Email = Email;
             NewPerson.Username = Email;
             NewPerson.Password = "12345";
-            NewPerson.Type = "Tip";
+            NewPerson.Type = "Supervisor";
             #endregion Person
 
             #region Account
