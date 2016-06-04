@@ -16,7 +16,6 @@ namespace BSF.DAL
         public BankAccount ToAccount { get; set; }
         public BankAccount FromAccount { get; set; }
         public Person Referent { get; set; }
-        [Timestamp]
         public DateTime TimeStamp { get; set; }
     }
 }

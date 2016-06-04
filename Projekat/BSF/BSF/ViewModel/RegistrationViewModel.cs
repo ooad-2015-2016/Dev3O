@@ -2,7 +2,9 @@
 using BSF.DAL;
 using BSF.Helpers;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Windows.Input;
 using Windows.UI.Popups;
 using Windows.UI.Xaml.Controls;
@@ -17,6 +19,8 @@ namespace BSF.ViewModel
         public BankAccount NewBankAccount { get; set; }
         public ICommand Register { get; set; }
         public ICommand Back { get; set; }
+        public List<string> TypesOfAccount { get; set; }
+
 
         private string _Name;
 
@@ -55,6 +59,8 @@ namespace BSF.ViewModel
         public string TelephoneNumber2 { get; set; }
         public string Email { get; set; }
         private bool? _TermsOfUse;
+        public string TypeAcc { get; set; }
+        public string Password { get; set; }
 
         public bool? TermsOfUse
         {
@@ -84,6 +90,10 @@ namespace BSF.ViewModel
             Back = new RelayCommand<object>(goBack);
             Register = new RelayCommand<object>(register, canRegister);
             TermsOfUse = false;
+            TypesOfAccount = new List<string>();
+            TypesOfAccount.Add("User");
+            TypesOfAccount.Add("Referent");
+            TypeAcc = "User";
 
         }
 
@@ -112,8 +122,8 @@ namespace BSF.ViewModel
             NewPerson.TelephoneNumber = "(" + TelephoneNumber1 + ")" + TelephoneNumber2;
             NewPerson.Email = Email;
             NewPerson.Username = Email;
-            NewPerson.Password = "12345";
-            NewPerson.Type = "Supervisor";
+            NewPerson.Password = Password;
+            NewPerson.Type = TypeAcc ;
             #endregion Person
 
             #region Account
@@ -157,6 +167,13 @@ namespace BSF.ViewModel
                     await notValidated.ShowAsync();
                 }
                 else {
+                    Person list = db.Persons.Where(per => per.Email == Email).FirstOrDefault();
+                    if(list != null)
+                    {
+                        var mess = new MessageDialog("Korisnik sa tim e-mailom vec postoji!");
+                        await mess.ShowAsync();
+                        return;
+                    }
                     db.Persons.Add(NewPerson);
                     db.BankAccounts.Add(NewBankAccount);
                     db.SaveChanges();

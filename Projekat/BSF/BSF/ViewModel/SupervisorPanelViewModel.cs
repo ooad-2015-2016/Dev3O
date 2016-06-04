@@ -53,5 +53,7 @@ namespace BSF.ViewModel
                 handler(this, new PropertyChangedEventArgs(property));
             }
         }
+
+
     }
 }

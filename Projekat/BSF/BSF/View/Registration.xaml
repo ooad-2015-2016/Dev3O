@@ -8,7 +8,7 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <Grid Background="#FFE6E6E6">
+        <Grid Background="#FFE6E6E6" d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition">
             <Grid.RowDefinitions>
                 <RowDefinition Height="3*" />
                 <RowDefinition Height="17*" />
@@ -130,62 +130,57 @@
             <TextBox
             x:Name="textPostanskiBroj"
             Grid.Row="1"
-            Margin="131,239,120,268"
+            Margin="131,239,10,0"
             PlaceholderText="Postanski br."
             Text="{x:Bind viewModel.PostalNumber, Mode=TwoWay}"
-            TextWrapping="Wrap" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" VerticalAlignment="Top" />
-            <ComboBox
-            x:Name="comboDrzava"
-            Grid.Row="1"
-            Width="105"
-            Margin="0,239,10,268"
-            HorizontalAlignment="Right"
-            PlaceholderText="Drzava" VerticalAlignment="Stretch" d:LayoutOverrides="Height, LeftMargin, RightMargin, TopMargin, BottomMargin, TopPosition, BottomPosition" />
+            TextWrapping="Wrap" VerticalAlignment="Top" />
+            <TextBox x:Name="textBox" Margin="131,276,10,0" Grid.Row="1" TextWrapping="Wrap" Text="{x:Bind viewModel.Password, Mode=TwoWay}" d:LayoutOverrides="LeftPosition, RightPosition" PlaceholderText="Sifra" VerticalAlignment="Top"/>
+
             <TextBlock
             x:Name="textBlock6"
             Grid.Row="1"
-            Margin="10,0,0,224"
+            Margin="15,332,0,0"
             HorizontalAlignment="Left"
             Text="Telefon:"
-            TextWrapping="Wrap" VerticalAlignment="Bottom" Height="32" Width="56" d:LayoutOverrides="LeftMargin, RightMargin" FontFamily="Microsoft JhengHei Light" />
+            TextWrapping="Wrap" VerticalAlignment="Top" Height="32" Width="56" FontFamily="Microsoft JhengHei Light" />
             <TextBlock
             x:Name="textBlock7"
             Grid.Row="1"
-            Margin="10,0,0,191"
+            Margin="10,381,0,0"
             HorizontalAlignment="Left"
-            VerticalAlignment="Bottom"
+            VerticalAlignment="Top"
             Text="E-mail:"
             TextWrapping="Wrap" Height="20" Width="61" FontFamily="Microsoft JhengHei Light" />
             <TextBox
             x:Name="textTelefon1"
             Grid.Row="1"
-            Margin="131,0,158,228"
+            Margin="131,332,158,0"
             InputScope="TelephoneCountryCode"
             PlaceholderText="+000"
             Text="{x:Bind viewModel.TelephoneNumber1, Mode=TwoWay}"
-            TextWrapping="Wrap" VerticalAlignment="Bottom" Height="32" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+            TextWrapping="Wrap" VerticalAlignment="Top" Height="32" d:LayoutOverrides="LeftMargin, RightMargin" />
             <TextBox
             x:Name="textTelefon2"
             Grid.Row="1"
             Width="132"
-            Margin="0,0,10,228"
+            Margin="0,332,10,0"
             HorizontalAlignment="Right"
             InputScope="TelephoneLocalNumber"
             PlaceholderText="0000000"
             Text="{x:Bind viewModel.TelephoneNumber2, Mode=TwoWay}"
-            TextWrapping="Wrap" VerticalAlignment="Bottom" Height="32" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" />
+            TextWrapping="Wrap" VerticalAlignment="Top" Height="32" d:LayoutOverrides="LeftMargin, RightMargin" />
             <TextBlock
             x:Name="textBlock8"
             Grid.Row="1"
-            Margin="0,0,152,242"
+            Margin="0,348,147,0"
             HorizontalAlignment="Right"
             Text="-"
-            TextWrapping="Wrap" VerticalAlignment="Bottom" Height="12" Width="6" />
+            TextWrapping="Wrap" VerticalAlignment="Top" Height="12" Width="6" />
             <TextBox
             x:Name="textBox2"
             Grid.Row="1"
-            Margin="131,0,10,191"
-            VerticalAlignment="Bottom"
+            Margin="131,369,10,0"
+            VerticalAlignment="Top"
             PlaceholderText="example@expample.com"
             Text="{x:Bind viewModel.Email, Mode=TwoWay}"
             TextWrapping="Wrap"
@@ -193,39 +188,40 @@
             <CheckBox
             x:Name="checkUslov"
             Grid.Row="1"
-            Margin="10,0,10,138"
-            VerticalAlignment="Bottom"
-            Content="Ovim potvrđujem da sam pročitao/la odredbe i uvjete za korištenje" HorizontalAlignment="Stretch" Height="45" d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin" FontFamily="Microsoft JhengHei Light" FontWeight="Bold" 
-            IsChecked="{x:Bind viewModel.TermsOfUse, Mode=TwoWay}"/>
-            <TextBlock
-            x:Name="textBlock9"
-            Grid.Row="1"
-            Margin="10,0,0,110"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Bottom"
-            Text="Napomena:"
-            TextWrapping="Wrap" Height="20" Width="81" d:LayoutOverrides="LeftMargin, RightMargin" FontFamily="Microsoft JhengHei Light" />
-            <TextBox
-            x:Name="textBox"
-            Grid.Row="1"
-            Margin="10,0,10,73"
-            VerticalAlignment="Bottom"
-            RenderTransformOrigin="0.488,0.526"
-            Text=""
-            TextWrapping="Wrap"
-            d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition" Height="32" />
+            Margin="10,438,10,0"
+            VerticalAlignment="Top"
+            Content="Ovim potvrđujem da sam pročitao/la odredbe i uvjete za korištenje" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftMargin, RightMargin" FontFamily="Microsoft JhengHei Light" FontWeight="Bold" 
+            IsChecked="{x:Bind viewModel.TermsOfUse, Mode=TwoWay}" Height="45"/>
             <Button
             x:Name="buttonRegistracija"
             Grid.Row="1"
-            Margin="75,0,75,15"
+            Margin="75,488,75,0"
             HorizontalAlignment="Stretch"
-            VerticalAlignment="Bottom"
+            VerticalAlignment="Top"
             Content="Registracija"
-            d:LayoutOverrides="LeftMargin, RightMargin, TopMargin, BottomMargin, LeftPosition, RightPosition" Background="White" Height="41"
+            d:LayoutOverrides="LeftMargin, RightMargin, LeftPosition, RightPosition" Background="White" Height="41"
             Command="{x:Bind viewModel.Register,Mode=TwoWay}"/>
             <Image x:Name="image" Margin="10,6,0,10" Source="ms-appx:///Assets/Logo.png" HorizontalAlignment="Left" Width="95" d:LayoutOverrides="LeftMargin, RightMargin, TopPosition, BottomPosition"/>
+            <TextBlock
+            	x:Name="textBlock7_Copy"
+            	Grid.Row="1"
+            	Margin="10,415,0,0"
+            	HorizontalAlignment="Left"
+            	VerticalAlignment="Top"
+            	Text="Tip racuna:"
+            	TextWrapping="Wrap" Height="20" Width="95" FontFamily="Microsoft JhengHei Light" />
+            <ComboBox x:Name="comboBox1" HorizontalAlignment="Stretch" Margin="131,406,10,0" Grid.Row="1" VerticalAlignment="Top" IsDropDownOpen="True"
+                      ItemsSource="{x:Bind viewModel.TypesOfAccount}" SelectedItem="{x:Bind viewModel.TypeAcc, Mode=TwoWay}"/>
+             <TextBlock
+            	x:Name="textBlock6_Copy"
+            	Grid.Row="1"
+            	Margin="15,278,0,0"
+            	HorizontalAlignment="Left"
+            	Text="Sifra:"
+            	TextWrapping="Wrap" Width="56" FontFamily="Microsoft JhengHei Light" Height="36" VerticalAlignment="Top" />
 
         </Grid>
+        <ComboBox x:Name="comboBox" Width="120"/>
 
     </Grid>
 </Page>
