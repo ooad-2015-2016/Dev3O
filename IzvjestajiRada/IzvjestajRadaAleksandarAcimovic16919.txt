@@ -1,0 +1,12 @@
+#Izvjestaj rada za Aleksandar Acimovic
+- 18.05.2016.(12:00 - 15:00) - Izrada modela, modifikovanje ideje za sistem
+- 19.05.2016.(12:00 - 13:00) - Manje izmjene nad modelima
+- 22.05.2016.(22:30) - 23.05.2016.(03:30) - Kompletna izrada igrice
+- 26.05.2016.(12:00 - 14:00) - Rjesavanje konflikata u projektu izrada i modifikacija nekoliko view-a
+- 27.05.2016.(18:00 - 23:59) - Pokusavanje uspostave baze podataka, falila referenca u projektu na samoga sebe radi toga nije radila migracija
+- 28.05.2016.(12:00 - 16:00, 20:00 - 23:00) - Pokusavanje uspostave baze podataka BaseFirst varijantom pomocu POCO temlata EF-a, bezuspjesno (kasnije se ispostavilo da je greska nastajala radi nove verzije paketa koja nije na vrijeme azurirana u VS-u)
+- 29.05.2016.(15:00 - 22:00) - Kreiran novi projekat, napokon uspostavljena lokalna baza podataka, prepreku pravili losi .dll fajlovi unutar UserData foldera
+- 01.06.2016.(20:00 - 23:59) - Napravio viewove
+- 02.06.2016.(18:00 - 20:00) - Odradjeni prvi VM-ovi
+- 03.06.2016.(15:00 - 23:00) - Rjesavanje povezivanja i pravljenja custom liste, rjesavanje koflikata nastalih izmjenom manifesta, uradjena detaljnija validacija za odredjene forme
+- 05.06.2016.(21:00 - 23:59) - Zavrsavanje svih formi za Refereta i pisanje izvjestaja
