@@ -67,5 +67,16 @@ Nakon odabira opcije korisnik bira koju valutu zeli. Ukoliko se konverzija vrsi 
 		2. Supervizori - ucestvuju u registrovanju novih clanova 
 	- Moderator - predstavlja osobu na visim nivoima kojem je i zaduzenje dodjeljivanje privilegija uposlenicima
 
-	
+##Done list
+- Lokalna baza podataka https://github.com/ooad-2015-2016/Dev3O/blob/master/Projekat/BSF/BSF/Model/DAL/BankDbContext.cs
+- Validacija je ispostovana:
+	-- Registracija https://github.com/ooad-2015-2016/Dev3O/blob/master/Projekat/BSF/BSF/ViewModel/RegistrationViewModel.cs
+	-- Login https://github.com/ooad-2015-2016/Dev3O/blob/master/Projekat/BSF/BSF/ViewModel/LoginViewModel.cs
+	-- Transakcije user i referent
+		https://github.com/ooad-2015-2016/Dev3O/blob/master/Projekat/BSF/BSF/ViewModel/ReferentAccount.cs
+		https://github.com/ooad-2015-2016/Dev3O/blob/master/Projekat/BSF/BSF/ViewModel/ReferentAccount.cs
+- Eksterni servis : NavigationService https://github.com/ooad-2015-2016/Dev3O/blob/master/Projekat/BSF/BSF/Helpers/NavigationService.cs
+- Iskoristen GPS za mobilnu https://github.com/ooad-2015-2016/Dev3O/blob/master/Projekat/BSF/BSF/ViewModel/GPSSystemViewModel.cs
+- Web servis nije uradjen
+
    
