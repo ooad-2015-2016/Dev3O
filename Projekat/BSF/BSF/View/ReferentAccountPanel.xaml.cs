@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BSF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,34 @@ namespace BSF.View
     /// </summary>
     public sealed partial class ReferentAccountPanel : Page
     {
+        ReferentAccount viewModel;
         public ReferentAccountPanel()
         {
             this.InitializeComponent();
+            textBox_accountFrom.IsReadOnly = true;
+            textBox_accountTo.IsReadOnly = true;
+        }
+
+        private void radioButton_transaction_Checked(object sender, RoutedEventArgs e)
+        {
+            textBox_accountFrom.IsReadOnly = false;
+            textBox_accountTo.IsReadOnly = false;
+        }
+
+        private void radioButton_depozit_Checked(object sender, RoutedEventArgs e)
+        {
+            textBox_accountFrom.IsReadOnly = true;
+            textBox_accountTo.IsReadOnly = false;
+        }
+
+        private void radioButton_preuzimanje_Checked(object sender, RoutedEventArgs e)
+        {
+            textBox_accountFrom.IsReadOnly = false;
+            textBox_accountTo.IsReadOnly = true;
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            viewModel = (ReferentAccount)e.Parameter;
         }
     }
 }

@@ -84,6 +84,11 @@ namespace BSF.ViewModel
 
         private void doTransaction(object parameter)
         {
+            if(Amount <= 0)
+            {
+                var message = new MessageDialog("Vrijednost ne moze biti negativna!");
+                message.ShowAsync();
+            }
             using (var db = new BankDbContext())
             {
                 BankAccount ba = db.BankAccounts.Where(b => b.BankAccountID == NumberToAccount).FirstOrDefault();

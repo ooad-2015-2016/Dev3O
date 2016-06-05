@@ -7,10 +7,17 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Grid Background="#FFE6E6E6">
-        <Image x:Name="image" Margin="110,15,110,0" Source="ms-appx:///Assets/Logo.png" VerticalAlignment="Top" d:LayoutOverrides="Width, LeftPosition, RightPosition" HorizontalAlignment="Center"/>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,150,0,0" TextWrapping="Wrap" Text="Referent Panel" VerticalAlignment="Top" FontFamily="Microsoft JhengHei UI Light" FontSize="30"/>
-        <Button x:Name="button_referentToSelf" Content="Moj racun" VerticalAlignment="Top" Margin="85,230,85,0" HorizontalAlignment="Stretch" Height="54" d:LayoutOverrides="LeftPosition, RightPosition" Command="{x:Bind viewModel.MyAccount}"/>
-        <Button x:Name="button_referentToRefPanel" Content="Usluge" VerticalAlignment="Stretch" Margin="85,313,85,273" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Command="{x:Bind viewModel.PanelNav}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="143*"/>
+            <RowDefinition Height="46*"/>
+            <RowDefinition Height="112*"/>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="252*"/>
+        </Grid.RowDefinitions>
+        <Image x:Name="image" Margin="110,15,110,5" Source="ms-appx:///Assets/Logo.png" d:LayoutOverrides="VerticalAlignment, Height, TopPosition, BottomPosition" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="124,7,124,2" TextWrapping="Wrap" Text="Referent Panel" FontFamily="Microsoft JhengHei UI Light" FontSize="30" d:LayoutOverrides="VerticalAlignment, Height, LeftMargin, RightMargin, TopPosition, BottomPosition" Grid.Row="1"/>
+        <Button x:Name="button_referentToSelf" Content="Moj racun" VerticalAlignment="Stretch" Margin="85,41,85,17" HorizontalAlignment="Stretch" d:LayoutOverrides="VerticalAlignment, LeftPosition, RightPosition, TopPosition, BottomPosition" Command="{x:Bind viewModel.MyAccount}" Grid.Row="2"/>
+        <Button x:Name="button_referentToRefPanel" Content="Usluge" VerticalAlignment="Stretch" Margin="85,12,85,21.297" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Command="{x:Bind viewModel.PanelNav}" Grid.Row="3"/>
 
     </Grid>
 </Page>

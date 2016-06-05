@@ -5,6 +5,7 @@
     xmlns:local="using:BSF.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:dat="using:BSF.DAL"
     mc:Ignorable="d">
 
     <Grid Background="#FFE6E6E6">
@@ -14,34 +15,38 @@
             <RowDefinition Height="313*"/>
             <RowDefinition Height="76*"/>
         </Grid.RowDefinitions>
-        <RadioButton x:Name="radioButton_transaction" Content="Transakcija" Margin="10,14,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" GroupName="g1" IsChecked="True"/>
-        <RadioButton x:Name="radioButton_depozit" Content="Depozit" HorizontalAlignment="Left" Margin="10,45,0,45" VerticalAlignment="Stretch" d:LayoutOverrides="Height, TopPosition, BottomPosition" GroupName="g1"/>
-        <RadioButton x:Name="radioButton_preuzimanje" Content="Preuzimanje" Margin="10,0,0,14" VerticalAlignment="Bottom" HorizontalAlignment="Left" GroupName="g1"/>
-        <Button x:Name="button_doTransaction" Content="Izvrsi" HorizontalAlignment="Stretch" Margin="135,20,10,14" VerticalAlignment="Stretch" d:LayoutOverrides="TopPosition, BottomPosition"/>
-        <TextBox x:Name="textBox_amount" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="10,10,10,0" Grid.Row="1" PlaceholderText="Kolicina"/>
-        <TextBox x:Name="textBox_accountFrom" TextWrapping="Wrap" Text="" Margin="10,47,10,50" Grid.Row="1" PlaceholderText="Od (br. racuna)" d:LayoutOverrides="Height, TopPosition, BottomPosition"/>
-        <TextBox x:Name="textBox_accountTo" TextWrapping="Wrap" Text="" VerticalAlignment="Bottom" Margin="10,0,10,13" Grid.Row="1" PlaceholderText="Prema (br. racuna)"/>
-        <ListView x:Name="listView_transactions" Margin="10,10,12,25.148" Grid.Row="2" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition">
-            <DataTemplate x:Name = "transactionListTemplate">
-                <Border BorderThickness="1" Padding="5">
-                    <Grid>
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="3*"/>
-                            <ColumnDefinition Width="*"/>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <TextBlock Grid.Row="0" Grid.Column="0" Text=""/>
-                        <TextBlock Grid.Row="0" Grid.Column="1" Text=""/>
-                        <Button Grid.Row="0" Grid.Column="2" Content="1" />
-                        <Button Grid.Row="0" Grid.Column="3" Content="2"/>
-                    </Grid>
-                </Border>
-            </DataTemplate>
+        <RadioButton x:Name="radioButton_transaction" Content="Transakcija" Margin="10,14,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" GroupName="g1" Checked="radioButton_transaction_Checked" IsChecked="{x:Bind viewModel.Trans, Mode=TwoWay}"/>
+        <RadioButton x:Name="radioButton_depozit" Content="Depozit" HorizontalAlignment="Left" Margin="10,45,0,45" VerticalAlignment="Stretch" d:LayoutOverrides="Height, TopPosition, BottomPosition" GroupName="g1" Checked="radioButton_depozit_Checked" IsChecked="{x:Bind viewModel.Dep, Mode=TwoWay}"/>
+        <RadioButton x:Name="radioButton_preuzimanje" Content="Preuzimanje" Margin="10,0,0,14" VerticalAlignment="Bottom" HorizontalAlignment="Left" GroupName="g1" Checked="radioButton_preuzimanje_Checked" IsChecked="{x:Bind viewModel.Rise, Mode=TwoWay}"/>
+        <Button x:Name="button_doTransaction" Content="Izvrsi" HorizontalAlignment="Stretch" Margin="135,20,10,14" VerticalAlignment="Stretch" d:LayoutOverrides="TopPosition, BottomPosition" Command="{x:Bind viewModel.DoWork}"/>
+        <TextBox x:Name="textBox_amount" TextWrapping="Wrap" Text="{x:Bind viewModel.Amount, Mode=TwoWay}" VerticalAlignment="Top" Margin="135,10,10,0" Grid.Row="1" PlaceholderText="Kolicina"/>
+        <TextBox x:Name="textBox_accountFrom" TextWrapping="Wrap" Text="{x:Bind viewModel.AccountFrom, Mode=TwoWay}" Margin="135,47,10,50" Grid.Row="1" PlaceholderText="Od (br. racuna)" d:LayoutOverrides="Height, TopPosition, BottomPosition"/>
+        <TextBox x:Name="textBox_accountTo" TextWrapping="Wrap" Text="{x:Bind viewModel.AccountTo, Mode=TwoWay}" VerticalAlignment="Bottom" Margin="135,0,10,13" Grid.Row="1" PlaceholderText="Prema (br. racuna)"/>
+        <ListView x:Name="listView_transactions" Margin="10,10,12,10" Grid.Row="2" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" ItemsSource="{x:Bind viewModel.UserTransactions}">
+            <ListView.ItemTemplate>
+                <DataTemplate x:Name = "transactionListTemplate" x:DataType="dat:Transaction">
+                    <Border BorderThickness="1" Padding="5">
+                        <Grid Width="291">
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="3*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Row="0" Grid.Column="0" Text="{x:Bind Amount}"/>
+                            <TextBlock Grid.Row="0" Grid.Column="1" Text="{x:Bind TransactionID}"/>
+                            <Button Grid.Row="0" Grid.Column="2" >1</Button>
+                            <Button Grid.Row="0" Grid.Column="3">2</Button>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        <Button x:Name="button_back" Content="Nazad" HorizontalAlignment="Stretch" Margin="10,10,12,10" Grid.Row="3" VerticalAlignment="Stretch"/>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Iznos:" VerticalAlignment="Top" Margin="92,17,0,0" Grid.Row="1"/>
+        <TextBlock x:Name="textBlock_Copy" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Br. racuna prema:" Margin="15,0,0,18" Grid.Row="1" VerticalAlignment="Bottom"/>
+        <TextBlock x:Name="textBlock_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Br. racuna sa:" Margin="43,54,0,55" Grid.Row="1" d:LayoutOverrides="Height, TopPosition, BottomPosition"/>
     </Grid>
 </Page>

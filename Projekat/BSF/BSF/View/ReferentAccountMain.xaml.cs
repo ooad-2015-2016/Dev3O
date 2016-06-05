@@ -23,13 +23,13 @@ namespace BSF.View
     /// </summary>
     public sealed partial class ReferentAccountMain : Page
     {
-        private ReferentAccount viewModel;
+         ReferentAccount viewModel;
 
         public ReferentAccountMain()
         {
             this.InitializeComponent();
         }
-        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             viewModel = (ReferentAccount)e.Parameter;
         }
