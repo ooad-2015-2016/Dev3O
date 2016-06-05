@@ -24,7 +24,7 @@ namespace BSF.ViewModel
 
         private void myAccount(object parameter)
         {
-            MyNavigationService.Navigate(typeof(UserAccount), new UserAccountViewModel(this, ref user)):
+            MyNavigationService.Navigate(typeof(UserAccount), new UserAccountViewModel(this, ref user));
         }
         private void panelNav (object parameter)
         {

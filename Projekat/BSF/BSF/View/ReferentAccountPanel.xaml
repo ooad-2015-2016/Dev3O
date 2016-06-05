@@ -14,9 +14,9 @@
             <RowDefinition Height="313*"/>
             <RowDefinition Height="76*"/>
         </Grid.RowDefinitions>
-        <RadioButton x:Name="radioButton_transaction" Content="Transakcija" Margin="10,14,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <RadioButton x:Name="radioButton_depozit" Content="Depozit" HorizontalAlignment="Left" Margin="10,45,0,45" VerticalAlignment="Stretch" d:LayoutOverrides="Height, TopPosition, BottomPosition"/>
-        <RadioButton x:Name="radioButton_preuzimanje" Content="Preuzimanje" Margin="10,0,0,14" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+        <RadioButton x:Name="radioButton_transaction" Content="Transakcija" Margin="10,14,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" GroupName="g1" IsChecked="True"/>
+        <RadioButton x:Name="radioButton_depozit" Content="Depozit" HorizontalAlignment="Left" Margin="10,45,0,45" VerticalAlignment="Stretch" d:LayoutOverrides="Height, TopPosition, BottomPosition" GroupName="g1"/>
+        <RadioButton x:Name="radioButton_preuzimanje" Content="Preuzimanje" Margin="10,0,0,14" VerticalAlignment="Bottom" HorizontalAlignment="Left" GroupName="g1"/>
         <Button x:Name="button_doTransaction" Content="Izvrsi" HorizontalAlignment="Stretch" Margin="135,20,10,14" VerticalAlignment="Stretch" d:LayoutOverrides="TopPosition, BottomPosition"/>
         <TextBox x:Name="textBox_amount" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Margin="10,10,10,0" Grid.Row="1" PlaceholderText="Kolicina"/>
         <TextBox x:Name="textBox_accountFrom" TextWrapping="Wrap" Text="" Margin="10,47,10,50" Grid.Row="1" PlaceholderText="Od (br. racuna)" d:LayoutOverrides="Height, TopPosition, BottomPosition"/>
