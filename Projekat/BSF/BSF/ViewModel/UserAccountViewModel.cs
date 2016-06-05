@@ -30,6 +30,19 @@ namespace BSF.ViewModel
         public ICommand  DoTransaction { get; set; }
         public int NumberToAccount { get; set; }
         public int Amount { get; set; }
+        public string NameOfUser { get; set; }
+        private double _Balance;
+        private ReferentAccount referentAccount;
+
+        public double Balance
+        {
+            get { return _Balance; }
+            set {
+                _Balance = value;
+                   OnPropertyChanged();
+            }
+        }
+
 
         public UserAccountViewModel(LoginViewModel loginViewModel, ref Person user)
         {
@@ -46,8 +59,28 @@ namespace BSF.ViewModel
                         _UserTransactions.Add(transaction);
                 }
             }
+            Balance = Account.Balance;
+            NameOfUser = this.user.Name + " " + this.user.SurName;
         }
 
+        public UserAccountViewModel(ReferentAccount referentAccount, ref Person user)
+        {
+            this.referentAccount = referentAccount;
+            this.user = user;
+            DoTransaction = new RelayCommand<object>(doTransaction);
+            using (var db = new BankDbContext())
+            {
+                Account = db.BankAccounts.Where(ac => ac.Owner.AccoutnId == this.user.AccoutnId).FirstOrDefault();
+                _UserTransactions = new ObservableCollection<Transaction>();
+                foreach (var transaction in db.Transactions)
+                {
+                    if (transaction.FromAccount == Account || transaction.ToAccount == Account)
+                        _UserTransactions.Add(transaction);
+                }
+            }
+            Balance = Account.Balance;
+            NameOfUser = this.user.Name + " " + this.user.SurName;
+        }
 
         private void doTransaction(object parameter)
         {
@@ -72,6 +105,7 @@ namespace BSF.ViewModel
                     db.SaveChanges();
                     var message = new MessageDialog("Transakcija uspjesna!");
                     message.ShowAsync();
+                    Balance = Account.Balance;
                     
                 }
             }

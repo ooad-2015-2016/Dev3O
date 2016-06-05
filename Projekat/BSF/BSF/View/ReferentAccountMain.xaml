@@ -9,8 +9,8 @@
     <Grid Background="#FFE6E6E6">
         <Image x:Name="image" Margin="110,15,110,0" Source="ms-appx:///Assets/Logo.png" VerticalAlignment="Top" d:LayoutOverrides="Width, LeftPosition, RightPosition" HorizontalAlignment="Center"/>
         <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,150,0,0" TextWrapping="Wrap" Text="Referent Panel" VerticalAlignment="Top" FontFamily="Microsoft JhengHei UI Light" FontSize="30"/>
-        <Button x:Name="button_referentToSelf" Content="Moj racun" VerticalAlignment="Top" Margin="85,230,85,0" HorizontalAlignment="Stretch" Height="54" d:LayoutOverrides="LeftPosition, RightPosition"/>
-        <Button x:Name="button_referentToRefPanel" Content="Usluge" VerticalAlignment="Stretch" Margin="85,313,85,273" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition"/>
+        <Button x:Name="button_referentToSelf" Content="Moj racun" VerticalAlignment="Top" Margin="85,230,85,0" HorizontalAlignment="Stretch" Height="54" d:LayoutOverrides="LeftPosition, RightPosition" Command="{x:Bind viewModel.MyAccount}"/>
+        <Button x:Name="button_referentToRefPanel" Content="Usluge" VerticalAlignment="Stretch" Margin="85,313,85,273" HorizontalAlignment="Stretch" d:LayoutOverrides="LeftPosition, RightPosition, TopPosition, BottomPosition" Command="{x:Bind viewModel.PanelNav}"/>
 
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BSF.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,9 +23,15 @@ namespace BSF.View
     /// </summary>
     public sealed partial class ReferentAccountMain : Page
     {
+        private ReferentAccount viewModel;
+
         public ReferentAccountMain()
         {
             this.InitializeComponent();
+        }
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            viewModel = (ReferentAccount)e.Parameter;
         }
     }
 }
